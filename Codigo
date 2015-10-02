@@ -1,0 +1,104 @@
+int edadgaby= 30;
+String nombre="gaby";
+
+
+void setup () {
+  size(1000, 1000); // CANVAS
+}
+
+void draw () { 
+  background (10);         // CANVAS FONDO NEGRO 
+  fill(0, 1200, 255);     // FONDO GENERAL
+
+  fill(250);
+  stroke(80);
+  rect(0, 500, 1000, 100); // COLOR DE CALLE, ENCIMA
+
+  //CALLE PRINCIPAL
+  line(0, 500, 1000, 500); // STREET BORDER ABAJO
+  line(0, 600, 1000, 600); // STREET BORDER ARRIBA
+  stroke(255);             //STROKE DE LA CALLE
+
+  ellipse(500, 550, 20, 20);//PUNTO DE PERSPECTIVA
+  fill(0, 0, 0);
+  ellipse(500, 550, 5, 5);
+
+  //TECHOS DEL NORTE - IZQUIERDA
+  fill(50);
+  rect(50, 50, 100, 100); // EDIFICIO 1 ARRIBA - CUAD ESQ DER
+  stroke(255); 
+  line(150, 150, 500, 550); // ANGULO 1
+  line(50, 150, 500, 550); // ANGULO 2
+  line(150, 50, 500, 550); // ANGULO 3
+  fill(150);
+  rect(50, 200, 40, 280); // EDIFICIO 2 ARRIBA - RECT LARGO PARA ABAJO
+  line(90, 200, 500, 550); // ANGULO 1
+  line(90, 480, 500, 550); // ANGULO 2
+  line(50, 480, 500, 550); // ANGULO 3
+  fill(200);
+  rect(180, 220, 300, 200); // EDIFICIO 3 ARRIBA - RECT GRANDE
+  //line(480,420, 500, 550); // ANGULO 1
+  line(180, 420, 500, 550); // ANGULO 2
+  line(480, 220, 500, 550); // ANGULO 3
+  fill(120);
+  quad(180, 420, 480, 420, 490, 500, 380, 500); //FACHADA EDIF 3
+  //triangle(500, 550, 480, 420, 180,420); //FACHADA EDIFICIO 3
+
+  //TECHOS DEL NORTE - DERECHA
+  fill(50);
+  rect(850, 120, 80, 250); // EDIFICIO 4 ARRIBA - RECT LARGO IZQ
+  stroke(255); 
+  line(850, 370, 500, 550); // ANGULO 1
+  line(930, 370, 830, 410); // ANGULO 2
+  line(850, 120, 500, 550); // ANGULO 3
+  fill(150);
+  rect(700, 80, 20, 30); // EDIFICIO 5 ARRIBA - MINI RECT A
+  line(720, 110, 710, 130); // ANGULO 1
+  line(700, 110, 500, 550); // ANGULO 2
+  line(700, 80, 500, 550); // ANGULO 3
+
+  rect(700, 130, 20, 30); // EDIFICIO 6 ARRIBA - MINI RECT B
+  line(720, 160, 710, 180); // ANGULO 1
+  line(700, 160, 500, 550); // ANGULO 2
+  line(700, 130, 500, 550); // ANGULO 3
+
+  rect(700, 180, 20, 30); // EDIFICIO 7 ARRIBA - MINI RECT C
+  line(720, 210, 500, 550); // ANGULO 1
+  line(700, 210, 500, 550); // ANGULO 2
+  line(700, 180, 500, 550); // ANGULO 3
+
+  fill(40);
+  rect(650, 400, 180, 60); // EDIFICIO 8 ARRIBA - RECT LARGO ABAJO
+  fill(230);
+  triangle(650, 460, 500, 550, 830, 460); //FACHADA EDIFICIO 8
+  line(650, 400, 500, 550); // ANGULO 1
+  line(830, 460, 500, 550); // ANGULO 2
+  line(650, 460, 500, 550); // ANGULO 3
+  fill(160);
+  noStroke(); 
+  rect(0, 500, 1000, 100); // COLOR DE CALLE, ENCIMA                      
+
+  noStroke();
+  fill(280, 204, 0); //COLOR LINEAS CALLE
+
+  for (int posX=25; posX <=1000; posX = posX+35) {
+    rect(posX, 545, 20, 8); // VIAS DE LA CALLE
+  }
+
+  //CUIDAD DE ABAJO - FORMAS DIFERENTES
+
+  // UN FOR ANIDADO
+  for (int posX=300; posX<600; posX=posX+40) {
+
+    for (int posY=700; posY<800; posY=posY+40) {
+      fill(0, 160, 10);
+      ellipse(posX, posY, 30, 30);
+      
+      
+    }
+  }
+  
+  
+
+  text("mi nombre es"+nombre + "y tengo" + edadgaby, 200,200);
+}
